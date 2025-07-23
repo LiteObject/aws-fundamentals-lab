@@ -56,9 +56,29 @@ data "aws_availability_zones" "available" {
 # =============================================================================
 # NETWORKING INFRASTRUCTURE
 # =============================================================================
+# 
+# 💰 COST SUMMARY FOR LAB 1 (VPC Infrastructure):
+# ✅ FREE RESOURCES:
+#    - VPC (Virtual Private Cloud)
+#    - Subnets (Public and Private)
+#    - Internet Gateway
+#    - Route Tables and Route Table Associations
+#    - Security Groups (when added in later labs)
+#    - NACLs (Network Access Control Lists)
+# 
+# 💸 POTENTIAL COSTS IN FUTURE LABS:
+#    - EC2 Instances (~$8.50/month for t3.micro)
+#    - NAT Gateways (~$45/month + data processing charges)
+#    - Load Balancers (~$22/month + data processing)
+#    - RDS Instances (~$15/month for db.t3.micro)
+#    - Data Transfer (charges for data leaving AWS)
+# 
+# 🎓 LAB 1 TOTAL COST: $0.00 (All resources are FREE!)
+# =============================================================================
 
 # Virtual Private Cloud (VPC)
 # This creates an isolated network environment in AWS
+# 💰 COST: FREE - VPCs themselves do not incur charges
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"        # Private IP range (65,536 IP addresses)
   enable_dns_hostnames = true                 # Enable DNS hostnames for instances
@@ -71,6 +91,7 @@ resource "aws_vpc" "main" {
 
 # Internet Gateway
 # This provides internet access to resources in public subnets
+# 💰 COST: FREE - Internet Gateways do not incur charges
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id                   # Attach to our VPC
 
@@ -86,6 +107,7 @@ resource "aws_internet_gateway" "main" {
 # Public Subnets
 # These subnets have direct internet access via the Internet Gateway
 # Ideal for load balancers, NAT gateways, and bastion hosts
+# 💰 COST: FREE - Subnets themselves do not incur charges
 resource "aws_subnet" "public" {
   count = 2                                   # Create 2 public subnets for high availability
 
@@ -103,6 +125,7 @@ resource "aws_subnet" "public" {
 # Private Subnets
 # These subnets have no direct internet access - more secure for application servers and databases
 # Internet access can be provided via NAT Gateway if needed
+# 💰 COST: FREE - Subnets themselves do not incur charges
 resource "aws_subnet" "private" {
   count = 2                                   # Create 2 private subnets for high availability
 
@@ -122,6 +145,7 @@ resource "aws_subnet" "private" {
 
 # Route Table for Public Subnets
 # This defines how traffic flows from public subnets to the internet
+# 💰 COST: FREE - Route tables do not incur charges
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
@@ -138,6 +162,7 @@ resource "aws_route_table" "public" {
 
 # Associate Public Subnets with Public Route Table
 # This connects each public subnet to the route table, enabling internet access
+# 💰 COST: FREE - Route table associations do not incur charges
 resource "aws_route_table_association" "public" {
   count = length(aws_subnet.public)          # Associate all public subnets
 
