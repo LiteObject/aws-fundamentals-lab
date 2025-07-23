@@ -18,11 +18,34 @@ aws configure
 # Default output format: json
 ```
 
+### Configure AWS Profile (If Using Named Profiles)
+If you're using named AWS profiles instead of the default profile, you'll need to set the AWS_PROFILE environment variable:
+
+**For PowerShell:**
+```powershell
+$env:AWS_PROFILE="PROFILE_NAME"
+```
+
+**For Bash/Linux/macOS:**
+```bash
+export AWS_PROFILE=PROFILE_NAME
+```
+
+**Alternative**: You can also specify the profile in the AWS provider block:
+```hcl
+provider "aws" {
+  region  = var.aws_region
+  profile = "PROFILE_NAME"  # Add this line if using named profiles
+}
+```
+
 ### Verify Setup
 ```bash
 aws sts get-caller-identity
 terraform version
 ```
+
+> **Note**: If you get the error "Error: Retrieving AWS account details: validating provider credentials...", make sure you've set the correct AWS_PROFILE environment variable or configured your AWS credentials properly.
 
 ## Lab Overview
 
@@ -157,6 +180,10 @@ resource "aws_route_table_association" "public" {
 
 **Deploy the VPC:**
 ```bash
+# For PowerShell users with named profiles:
+$env:AWS_PROFILE="PROFILE_NAME"
+
+# Then run Terraform commands:
 terraform init
 terraform plan
 terraform apply
