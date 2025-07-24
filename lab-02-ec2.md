@@ -17,7 +17,7 @@ By the end of this lab, you will:
 - SSH client installed (built into Windows 10+, macOS, and Linux)
 
 ## Cost Information
-**💰 Estimated Monthly Cost: ~$17.00**
+**Estimated Monthly Cost: ~$17.00**
 - EC2 t3.micro instances: ~$8.50/month each (2 instances = ~$17.00)
 - SSH Key Pairs: FREE
 - Security Groups: FREE

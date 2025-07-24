@@ -17,7 +17,7 @@ By the end of this lab, you will:
 - Basic understanding of relational databases
 
 ## Cost Information
-**💰 Estimated Additional Monthly Cost: ~$15.00**
+**Estimated Additional Monthly Cost: ~$15.00**
 - RDS db.t3.micro instance: ~$15/month
 - Storage (20GB): ~$2.30/month
 - Backup storage: First 20GB free

@@ -17,7 +17,7 @@ By the end of this lab, you will:
 - Understanding of IAM roles and policies
 
 ## Cost Information
-**💰 Estimated Additional Monthly Cost: ~$1.00**
+**Estimated Additional Monthly Cost: ~$1.00**
 - S3 Standard storage: $0.023/GB per month
 - PUT/POST requests: $0.0005 per 1,000 requests
 - GET requests: $0.0004 per 1,000 requests

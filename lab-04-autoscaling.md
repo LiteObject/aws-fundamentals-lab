@@ -17,7 +17,7 @@ By the end of this lab, you will:
 - Understanding of EC2 instances and load balancers
 
 ## Cost Information
-**💰 Estimated Cost Impact: Variable**
+**Estimated Cost Impact: Variable**
 - Auto Scaling Group: FREE (you pay only for the EC2 instances)
 - EC2 instances: ~$8.50/month per t3.micro instance
 - CloudWatch alarms: $0.10/month per alarm

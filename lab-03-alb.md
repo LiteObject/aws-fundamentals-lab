@@ -16,7 +16,7 @@ By the end of this lab, you will:
 - 2 running EC2 instances from previous lab
 
 ## Cost Information
-**💰 Estimated Additional Monthly Cost: ~$22.00**
+**Estimated Additional Monthly Cost: ~$22.00**
 - Application Load Balancer: ~$22/month + data processing charges
 - Target Groups: FREE
 - Health Checks: FREE

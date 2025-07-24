@@ -17,7 +17,7 @@ By the end of this lab, you will:
 - All previous lab infrastructure deployed
 
 ## Cost Information
-**💰 Estimated Additional Monthly Cost: ~$5.00**
+**Estimated Additional Monthly Cost: ~$5.00**
 - CloudWatch alarms: $0.10/alarm per month
 - Custom metrics: $0.30/metric per month
 - Dashboard: $3.00/dashboard per month

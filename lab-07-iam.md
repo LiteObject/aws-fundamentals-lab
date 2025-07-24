@@ -16,7 +16,7 @@ By the end of this lab, you will:
 - Understanding of AWS services from previous labs
 
 ## Cost Information
-**💰 Cost: FREE**
+**Cost: FREE**
 - IAM users, groups, roles, and policies: No charge
 - AWS CloudTrail (first trail): Free
 - IAM Access Analyzer: Free
